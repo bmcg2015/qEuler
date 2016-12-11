@@ -25,12 +25,15 @@
 //                up to.
 //
 // returns:       The difference between the square of the sum of the list and the sum of
-//                the squares.
+//                the squares. Returns `typ error if the argument is not an int atom.
+//                Returns `neg error if the argument is less than 0.
 //
 findDifference:{
    [ maxInt ]
+   if[ -7 <> type maxInt; '`typ ];
+   if[ maxInt < 0; '`neg ];
    a: 1 + til maxInt;
    ( { [x] x*x }sum a ) - sum a * a
    }
 
-\ts:10000 findDifference[ 100 ]
+//\ts:10000 findDifference[ 100 ]
