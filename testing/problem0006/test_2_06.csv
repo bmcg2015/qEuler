@@ -1,0 +1,7 @@
+action,ms,bytes,lang,code,repeat,minver,comment
+beforeany,0,0,q, \l ../../problem0006/2_06.q,1,,
+true,0,0,q,25164150=findDifference[ 100 ], 1,,
+fail,0,0,q,findDifference[ 100.88 ], 1,,
+true,0,0,q,0=findDifference[ 0 ], 1,,
+true,0,0,q,0=findDifference[ 1 ], 1,,
+fail,0,0,q,findDifference[ -1 ], 1,,
