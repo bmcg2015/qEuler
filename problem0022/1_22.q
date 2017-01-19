@@ -13,5 +13,19 @@ What is the total of all the name scores in the file?
 sum (1+til count l)*sum each l:(neg 64) + "i"$asc "," vs first ssr[;"\"";""] each read0 ` sv (first ` vs hsym .z.f),`p022_names.txt
 
 /
+Explanation (explained right-to-left):
+
 ` sv (first ` vs hsym .z.f),`p022_names.txt
 - generates path to p022_names.txt from script path, so script should work run from anywhere
+
+"," vs first ssr[;"\"";""] each read0
+- converts to sane list of strings
+
+l:(neg 64) + "i"$asc
+- sorts alphabetically, converts characters to integer representation (convert to integer, subtract 64 for ASCII offset)
+
+(1+til count l)*sum each l
+- multiplies position (starting from 1) by the sum of the values of each name
+
+sum
+- sums everything up to get final answer
